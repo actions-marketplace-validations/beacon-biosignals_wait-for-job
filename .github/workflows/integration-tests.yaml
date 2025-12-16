@@ -36,7 +36,7 @@ jobs:
       contents: read
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: ./
         id: wait-for-job-unnamed
         with:
@@ -97,7 +97,7 @@ jobs:
       contents: read
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: beacon-biosignals/get-workflow-run@v1
         id: workflow-run
         with:
@@ -136,7 +136,7 @@ jobs:
           run_id: ${{ steps.workflow-run.outputs.run-id }}
           job_id: ${{ steps.wait-for-job.outputs.job-id }}
           conclusion: ${{ steps.wait-for-job.outputs.conclusion }}
-      - uses: actions/download-artifact@v5
+      - uses: actions/download-artifact@v6
         with:
           name: build
           run-id: ${{ steps.workflow-run.outputs.run-id }}
@@ -155,7 +155,7 @@ jobs:
       contents: read
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: ./
         id: wait-for-job
         with:
